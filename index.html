@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva Mundial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cd-wrap">
+        <p class="cd-title">Vamos Argentina!!!</p>
+        <div class="cd-grid" id="grid">
+            <div class="cd-unit">
+                <div class="cd-num" id="days">--</div>
+                <div class="cd-label">días</div>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-num" id="hours">--</div>
+                <div class="cd-label">horas</div>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-num" id="mins">--</div>
+                <div class="cd-label">minutos</div>
+            </div>
+            <div class="cd-unit">
+                <div class="cd-num" id="secs">--</div>
+                <div class="cd-label">segundos</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var countDownDate = new Date(Date.UTC(2026, 5, 11, 17, 0, 0)).getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distancia = countDownDate - now;
+
+            var dias = Math.floor(distancia / 86400000);
+            var horas = Math.floor((distancia % 86400000) / 3600000);
+            var minutos = Math.floor((distancia % 3600000) / 60000);
+            var segundos = Math.floor((distancia % 60000) / 1000);
+
+            document.getElementById('days').innerHTML = dias;
+            document.getElementById('hours').innerHTML = horas;
+            document.getElementById('mins').innerHTML = minutos;
+            document.getElementById('secs').innerHTML = segundos;
+
+            if (distancia < 0) {
+                clearInterval(x);
+                document.getElementById('grid').innerHTML = '<p class="cd-done">¡Ya es el Mundial!</p>';
+            }
+        }, 1000);
+    </script>
+</html>

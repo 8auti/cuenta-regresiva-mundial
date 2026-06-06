@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+body {
+    background: #6AACE4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cd-wrap {
+    width: 100%;
+    padding: 4vw 3vw;
+    text-align: center;
+}
+
+.cd-title {
+    font-size: clamp(2rem, 5vw, 6rem);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: clamp(1rem, 3vw, 2.5rem);
+}
+
+.cd-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+}
+
+.cd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.cd-num {
+    font-size: clamp(3rem, 20vw, 22rem);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.cd-label {
+    font-size: clamp(0.7rem, 2vw, 2rem);
+    font-weight: 600;
+    color: #fff;
+    margin-top: clamp(4px, 1vw, 16px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.cd-done {
+    font-size: clamp(2rem, 6vw, 5rem);
+    font-weight: 600;
+    color: #fff;
+    padding: 2rem;
+}
