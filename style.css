@@ -13,15 +13,25 @@ body {
     position: relative;
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('soccer-field.jpg');
+    background-size: cover;
+    background-position: center top;
+    z-index: 0;
+}
+
 body::after {
     content: '';
     position: fixed;
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgb(114, 169, 231) 0%,
-        rgba(15, 80, 160, 0.75) 60%,
-        rgba(10, 60, 130, 0.92) 100%
+        rgba(131, 131, 131, 0.342) 0%,
+        rgba(91, 95, 99, 0.568) 60%,
+        rgba(6, 24, 51, 0.92) 100%
     );
     z-index: 1;
 }
