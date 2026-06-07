@@ -30,21 +30,28 @@
     </div>
 
     <script>
+        // Fecha del primer partido de Argentina en el Mundial 2026 (17 de junio de 2026 a la 1:00 UTC)
         var countDownDate = new Date(Date.UTC(2026, 5, 17, 1, 0, 0)).getTime();
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distancia = countDownDate - now;
 
+        var x = setInterval(function() {
+            // Fecha y hora actual en milisegundos
+            var now = new Date().getTime();
+            // Distancia entre la fecha actual y la fecha del partido
+            var distancia = countDownDate - now;
+            
+            // Cálculo de días, horas, minutos y segundos
             var dias = Math.floor(distancia / 86400000);
             var horas = Math.floor((distancia % 86400000) / 3600000);
             var minutos = Math.floor((distancia % 3600000) / 60000);
             var segundos = Math.floor((distancia % 60000) / 1000);
 
+            // Actualización del HTML con los valores calculados
             document.getElementById('days').innerHTML = dias;
             document.getElementById('hours').innerHTML = horas;
             document.getElementById('mins').innerHTML = minutos;
             document.getElementById('secs').innerHTML = segundos;
 
+            // Si la cuenta regresiva terminó, mostrar un mensaje
             if (distancia < 0) {
                 clearInterval(x);
                 document.getElementById('grid').innerHTML = '<p class="cd-done">¡Argentina ya jugo su primer partido!</p>';
